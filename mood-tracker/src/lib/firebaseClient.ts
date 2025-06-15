@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { log } from "console";
 import { redirect } from "next/navigation";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -36,15 +36,25 @@ export const loginSequence = async (email :string, password : string ) => {
     const user = await signInWithEmailAndPassword(auth, email, password );
 
     console.log(user.user)
+
+    return JSON.stringify(user)
     // redirect('../app/page.tsx')
 
   } catch (error) {
     if(error){
-      throw new Error('uh oh something broke blake')
+      console.log(error);
+      throw new Error((error as Error).message)
     }
-    console.log(error);
 
   }
 
   
 }
+
+export const signInSequence = async(email: string, password: string) => {
+    const { user } = await createUserWithEmailAndPassword(auth, email, password)
+
+    console.log(user);
+    
+}
+
