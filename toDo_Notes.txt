@@ -1,6 +1,7 @@
 /***
  * TO DO ::::
-    create the main page after the user signs in or logs in
+   create cookies to grab token. use documentation ✅
+    create the main page after the user signs in or logs in (USE CHATGPT BLUEPRINT)
     set the hooks to check if the user is logged in when they first access the page
     if so skip login/ sign up page and go directly to "dashboard"
 
