@@ -2,7 +2,6 @@
 'use client';
 
 
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 // import Link from "next/link";
@@ -10,32 +9,9 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  // const [loading, setLoading] = useState(true);
-  // const [authed, setAuthed] = useState(false);
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   const auth = getAuth();
-  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setAuthed(true);
-  //       router.push('/dashboard'); // or whatever your main route is
-  //     } else {
-  //       setAuthed(false);
-  //     }
-  //     setLoading(false);
-  //   });
-
-  //   return () => unsubscribe();
-  // }, [router]);
-
+  
   const params = useSearchParams();
-  // const mode = params.get('mode') === 'signup' ? 'signup' : 'login';
-
-
-
-  // if (loading) return <p className="text-center mt-10">Checking auth...</p>;
-
+  
   return (
     //  <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-sky-100 to-indigo-200 text-center px-4">
     //      <h1 className="text-4xl md:text-6xl font-bold mb-12 text-gray-800">Welcome</h1>
